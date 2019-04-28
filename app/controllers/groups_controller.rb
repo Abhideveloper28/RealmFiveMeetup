@@ -1,9 +1,14 @@
 class GroupsController < ApplicationController
 
-  before_action :set_group, only: [:destroy]
+  before_action :set_group, only: [:show, :destroy]
 
   def index
     @groups = Group.all
+  end
+
+  def show
+    @users = @group.users
+    @events = @group.events
   end
 
   def destroy

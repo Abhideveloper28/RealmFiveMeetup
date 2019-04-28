@@ -21,6 +21,7 @@
           <td><%= group.group_name %></td>
           <td><%= group.users.count %></td>
           <td>
+            <%= link_to 'View', group_path(group), class: 'btn btn-success' %>
             <%= link_to 'Edit', edit_group_path(group), class: 'btn btn-primary' %>
             <%= link_to 'Remove', group_path(group), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
           </td>
