@@ -18,3 +18,7 @@
   display: flex;
   float: none;
 }
+
+.btn-width {
+  width: 125px;
+}

@@ -5,4 +5,8 @@ class User < ApplicationRecord
   # validation
   validates :first_name, uniqueness: { scope: :last_name,
     message: "User already exist." }
+
+  def name
+    (first_name + ' ' + last_name).titleize
+  end
 end

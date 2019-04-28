@@ -1,0 +1,31 @@
+<div class="page-header"><h1>Groups</h1></div>
+
+<% if @groups.blank? %>
+  <div class='text-center'>
+    <h5> No group created yet!!!!</h5>
+  </div>
+<% else %>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Organizer</th>
+        <th scope="col">Group Name</th>
+        <th scope="col">Users</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #eeeeee;">
+      <% @groups.each do |group | %>
+        <tr>
+          <td><%= group.organizer_name %></td>
+          <td><%= group.group_name %></td>
+          <td><%= group.users.count %></td>
+          <td>
+            <%= link_to 'Edit', edit_group_path(group), class: 'btn btn-primary' %>
+            <%= link_to 'Remove', group_path(group), class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
