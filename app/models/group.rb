@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
   # association
-  has_many :events
+  has_many :events, dependent: :destroy
   has_many :users, through: :events
 
   def group_name
