@@ -1,5 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Associations' do
+    it { should have_many(:events) }
+    it { should have_many(:users).through(:events) }
+  end
+  describe 'Validation' do
+    it { should validate_uniqueness_of(:name) }
+  end
+
+  it "#group_name" do
+    group = Group.new(name: 'education group')
+    expect(group.group_name).to eq('Education Group')
+  end
 end
