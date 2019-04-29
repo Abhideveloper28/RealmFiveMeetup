@@ -19,6 +19,28 @@
   float: none;
 }
 
+.sub-container {
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 10px 15px;
+}
+
 .btn-width {
   width: 125px;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.container-fluid {
+   margin-bottom: 60px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
