@@ -1,0 +1,17 @@
+<div class="page-header"><h1>Edit <%= @group.group_name %></h1></div>
+<div class="sub-container">
+  <%= form_with(model: @group, local: true) do |form| %>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <%= form.text_field :name, class: "form-control width-50", placeholder: "name" %>
+    </div>
+    <div class='row'>
+      <div class='col-md-10'>
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+      <div class='col-md-2'>
+        <%= link_to 'Back', groups_path, class: 'btn btn-info' %>
+      </div>
+    </div>
+  <% end %>
+</div>
