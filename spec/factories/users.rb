@@ -1,0 +1,6 @@
+FactoryBot.define do
+  factory :user do
+    first_name  { Faker::Name.first_name.downcase }
+    last_name { Faker::Name.last_name.downcase }
+  end
+end
