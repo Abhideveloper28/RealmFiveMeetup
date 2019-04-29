@@ -3,16 +3,17 @@ require 'faker'
 # Create 10 User
 10.times do
   User.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    first_name: Faker::Name.first_name.downcase,
+    last_name: Faker::Name.last_name.downcase
   )
 end
 
 # Create 5 Groups
 5.times do
-  Group.create!(
-    name: Faker::Educator.subject + ' Group'
+  group = Group.new(
+    name: (Faker::Educator.subject + ' Group').downcase
   )
+  group.save if group.valid?
 end
 
 user_ids = User.ids # collect all user's id
