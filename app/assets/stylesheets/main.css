@@ -44,3 +44,7 @@
 .mt-20 {
   margin-top: 20px;
 }
+
+.list-group-item {
+  display: list-item;
+}
