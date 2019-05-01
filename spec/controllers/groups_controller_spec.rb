@@ -13,4 +13,14 @@ RSpec.describe GroupsController, type: :controller do
       expect(response).to render_template("index")
     end
   end
+
+  describe "GET group#show" do
+    it "should render groups#show template" do
+      group = FactoryBot.create(:group)
+
+      get :show, params: { id: group.id.to_s }
+
+      expect(response).to render_template("show")
+    end
+  end
 end
