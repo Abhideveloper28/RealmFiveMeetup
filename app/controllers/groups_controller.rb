@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :destroy, :edit, :update]
 
   def index
-    @groups = Group.valid_group.order('created_at DESC').uniq
+    @groups = Group.all.order('created_at DESC')
   end
 
   def show

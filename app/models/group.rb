@@ -7,8 +7,6 @@ class Group < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  scope :valid_group, -> { joins(:events).where("events.user_id is NOT NULL") }
-
   def group_name
     name.titleize
   end
